@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
+
+/* | RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input, button, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* | VARIABLES */
+
+:root {
+  --ACCENT: #000505;
+  --NEUTRAL: #dfdcfa;
+  --CONTRAST: #56B386;
+
+  /* FONTS */
+  --FF: 'Nunito Sans', sans-serif;
+  --FS: 1rem;
+
+  /* COLORS */
+  --BGCOLOR: var(--ACCENT);
+  --FCOLOR: #fff;
+  --NAV-BGCOLOR: var(--ACCENT);
+  --BORDER-COLOR: #333;
+
+  /* BORDERS */
+  --BORDERS: 1px solid var(--BORDER-COLOR);
+  --BORDER-RADIUS: 1rem;
+
+  /* STANDARD PADDING */
+  --PADDING-TB: 0.25em;
+  --PADDING-SIDES: 2.5%;
+
+  /* STANDARD MARGIN */
+  --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+/* | UTILITY CLASSES */
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* | GENERAL STYLES */
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--FF);
+  font-size: var(--FS);
+  background-color: var(--BGCOLOR);
+  color: var(--FCOLOR);
+}
+
+body {
+  padding: 0 8%;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a:any-link {
+  text-decoration: none;
+}
+
+a:focus,
+a:active {
+  color: var(--CONTRAST);
+}
+
+/* | SECTION */
+
+.section {
+  scroll-margin-top: 5rem;
+  min-height: calc(100vh - 56px);
+}
+
+/* | HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--BGCOLOR);
+  padding: .75em 0;
+}
+
+.header__section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__li {
+  display: inline-block;
+  padding: var(--PADDING-TB) 0;
+}
+
+.header__link--primary {
+  color: var(--CONTRAST);
+}
+
+.header__link--secondary {
+  color: var(--NEUTRAL);
+  padding: var(--PADDING-TB) 2em;
+  font-weight: 700;
+  border-radius: var(--BORDER-RADIUS);
+  transition: .3s ease-in-out;
+  outline: none !important;
+}
+
+.header__link--secondary:hover {
+  background-color: var(--NEUTRAL);
+  color: var(--ACCENT) !important;
+}
+
+.header__link--secondary.active {
+  color: var(--CONTRAST);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1025px) {
+  body {
+    padding: 0 5%;
+  }
+
+  .header__link--secondary {
+    padding: var(--PADDING-TB) 1.5em;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .header__nav {
+    display: none;
+  }
+}
